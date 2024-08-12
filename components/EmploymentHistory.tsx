@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from 'react';
+import Image from 'next/image';
 
 interface Job {
   company: string;
@@ -9,6 +10,7 @@ interface Job {
   overview: string;
   achievements: string;
   responsibilities: string;
+  techStack: string[];
 }
 
 const employmentData: Job[] = [
@@ -18,7 +20,15 @@ const employmentData: Job[] = [
     endDate: '31/12/2024',
     overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue. In laoreet, magna ut rutrum egestas, libero est fermentum eros, eget imperdiet nisl turpis sed quam. Nunc ac nisi id odio porttitor vestibulum eget a urna. Nunc nec dolor eros. Phasellus eget lacus nec mauris vehicula hendrerit.',
     achievements: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue. In laoreet, magna ut rutrum egestas, libero est fermentum eros, eget imperdiet nisl turpis sed quam. Nunc ac nisi id odio porttitor vestibulum eget a urna. Nunc nec dolor eros. Phasellus eget lacus nec mauris vehicula hendrerit.',
-    responsibilities: 'Curabitur et turpis vitae neque finibus facilisis non sed erat. Maecenas et porta purus, ut gravida eros. Curabitur auctor est sit amet arcu vehicula, ut posuere augue porttitor. Nullam volutpat, nulla a aliquam dictum, eros turpis hendrerit orci, quis lobortis nisl felis non dolor. Nullam ultricies magna sem, quis tincidunt eros suscipit a. Morbi cursus ligula ut ligula vehicula, gravida maximus tortor venenatis.'
+    responsibilities: 'Curabitur et turpis vitae neque finibus facilisis non sed erat. Maecenas et porta purus, ut gravida eros. Curabitur auctor est sit amet arcu vehicula, ut posuere augue porttitor. Nullam volutpat, nulla a aliquam dictum, eros turpis hendrerit orci, quis lobortis nisl felis non dolor. Nullam ultricies magna sem, quis tincidunt eros suscipit a. Morbi cursus ligula ut ligula vehicula, gravida maximus tortor venenatis.',
+    techStack: [
+      '/images/react.png',
+      '/images/azure.png',
+      '/images/postgres.png',
+      '/images/mongodb.png',
+      '/images/auth0.png',
+      '/images/tailwind.png',
+    ]
   },
   {
     company: 'Company B',
@@ -26,7 +36,16 @@ const employmentData: Job[] = [
     endDate: '31/12/2019',
     overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue. In laoreet, magna ut rutrum egestas, libero est fermentum eros, eget imperdiet nisl turpis sed quam. Nunc ac nisi id odio porttitor vestibulum eget a urna. Nunc nec dolor eros. Phasellus eget lacus nec mauris vehicula hendrerit.',
     achievements: 'Curabitur et turpis vitae neque finibus facilisis non sed erat. Maecenas et porta purus, ut gravida eros. Curabitur auctor est sit amet arcu vehicula, ut posuere augue porttitor. Nullam volutpat, nulla a aliquam dictum, eros turpis hendrerit orci, quis lobortis nisl felis non dolor. Nullam ultricies magna sem, quis tincidunt eros suscipit a. Morbi cursus ligula ut ligula vehicula, gravida maximus tortor venenatis.',
-    responsibilities: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue. In laoreet, magna ut rutrum egestas, libero est fermentum eros, eget imperdiet nisl turpis sed quam. Nunc ac nisi id odio porttitor vestibulum eget a urna. Nunc nec dolor eros. Phasellus eget lacus nec mauris vehicula hendrerit.'
+    responsibilities: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue. In laoreet, magna ut rutrum egestas, libero est fermentum eros, eget imperdiet nisl turpis sed quam. Nunc ac nisi id odio porttitor vestibulum eget a urna. Nunc nec dolor eros. Phasellus eget lacus nec mauris vehicula hendrerit.',
+    techStack: [
+      '/images/docker.png',
+      '/images/react.png',
+      '/images/html.png',
+      '/images/aws.png',
+      '/images/css.png',
+      '/images/nextjs.png',
+      '/images/terraform.png',
+    ]
   }
 ];
 
@@ -80,6 +99,22 @@ const EmploymentHistory: React.FC = () => {
         <div className="w-full md:w-1/2 space-y-4">
           <h4 className="text-xl font-bold text-left">Responsibilities</h4>
           <p>{job.responsibilities}</p>
+        </div>
+      </div>
+      <div className="w-full mt-8">
+        <h4 className="text-xl font-bold text-left mb-4">Tech Stack</h4>
+        <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-4">
+          {job.techStack.map((logo, index) => (
+            <div key={index} className="flex justify-center items-center p-2 bg-white rounded">
+              <Image
+                src={logo}
+                alt={`Technology ${index + 1}`}
+                width={90}
+                height={90}
+                objectFit="contain"
+              />
+            </div>
+          ))}
         </div>
       </div>
     </div>
