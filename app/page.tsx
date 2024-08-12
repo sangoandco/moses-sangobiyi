@@ -7,7 +7,7 @@ export default function Home() {
     <main className="">
       <Hero firstName="Moses" secondName="Sangobiyi" emailAddress="msangobiyi@gmail.com" phoneNumber="+44 7951 214 155" />
       <PersonalStatement />
-      <Software title="Software" />
+      <Software />
       <EmploymentHistory />
     </main>
   );
