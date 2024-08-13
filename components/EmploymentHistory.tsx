@@ -5,22 +5,36 @@ import Image from 'next/image';
 
 interface Job {
   company: string;
+  role: string;
   startDate: string;
   endDate: string;
   overview: string;
-  achievements: string;
-  responsibilities: string;
+  achievements: string[];
+  responsibilities: string[];
   techStack: string[];
 }
 
 const employmentData: Job[] = [
   {
-    company: 'Company A',
+    company: 'Lucy & Yak',
+    role: 'Senior Full Stack Engineer',
     startDate: '01/01/2020',
     endDate: '31/12/2024',
-    overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue. In laoreet, magna ut rutrum egestas, libero est fermentum eros, eget imperdiet nisl turpis sed quam. Nunc ac nisi id odio porttitor vestibulum eget a urna. Nunc nec dolor eros. Phasellus eget lacus nec mauris vehicula hendrerit.',
-    achievements: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue. In laoreet, magna ut rutrum egestas, libero est fermentum eros, eget imperdiet nisl turpis sed quam. Nunc ac nisi id odio porttitor vestibulum eget a urna. Nunc nec dolor eros. Phasellus eget lacus nec mauris vehicula hendrerit.',
-    responsibilities: 'Curabitur et turpis vitae neque finibus facilisis non sed erat. Maecenas et porta purus, ut gravida eros. Curabitur auctor est sit amet arcu vehicula, ut posuere augue porttitor. Nullam volutpat, nulla a aliquam dictum, eros turpis hendrerit orci, quis lobortis nisl felis non dolor. Nullam ultricies magna sem, quis tincidunt eros suscipit a. Morbi cursus ligula ut ligula vehicula, gravida maximus tortor venenatis.',
+    overview: 'A global Shopify Plus Fashion House based in.....',
+    achievements: [
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      'Vestibulum tincidunt est vitae ultrices accumsan.',
+      'Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.',
+      'In laoreet, magna ut rutrum egestas, libero est fermentum eros.',
+      'Eget imperdiet nisl turpis sed quam.',
+    ],
+    responsibilities: [
+      'Curabitur et turpis vitae neque finibus facilisis non sed erat.',
+      'Maecenas et porta purus, ut gravida eros.',
+      'Curabitur auctor est sit amet arcu vehicula, ut posuere augue porttitor.',
+      'Nullam volutpat, nulla a aliquam dictum, eros turpis hendrerit orci.',
+      'Quis lobortis nisl felis non dolor.',
+    ],
     techStack: [
       '/images/react.png',
       '/images/azure.png',
@@ -32,11 +46,24 @@ const employmentData: Job[] = [
   },
   {
     company: 'Company B',
+    role: "Engineer",
     startDate: '01/01/2016',
     endDate: '31/12/2019',
     overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue. In laoreet, magna ut rutrum egestas, libero est fermentum eros, eget imperdiet nisl turpis sed quam. Nunc ac nisi id odio porttitor vestibulum eget a urna. Nunc nec dolor eros. Phasellus eget lacus nec mauris vehicula hendrerit.',
-    achievements: 'Curabitur et turpis vitae neque finibus facilisis non sed erat. Maecenas et porta purus, ut gravida eros. Curabitur auctor est sit amet arcu vehicula, ut posuere augue porttitor. Nullam volutpat, nulla a aliquam dictum, eros turpis hendrerit orci, quis lobortis nisl felis non dolor. Nullam ultricies magna sem, quis tincidunt eros suscipit a. Morbi cursus ligula ut ligula vehicula, gravida maximus tortor venenatis.',
-    responsibilities: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue. In laoreet, magna ut rutrum egestas, libero est fermentum eros, eget imperdiet nisl turpis sed quam. Nunc ac nisi id odio porttitor vestibulum eget a urna. Nunc nec dolor eros. Phasellus eget lacus nec mauris vehicula hendrerit.',
+    achievements: [
+      'Curabitur et turpis vitae neque finibus facilisis non sed erat.',
+      'Maecenas et porta purus, ut gravida eros.',
+      'Curabitur auctor est sit amet arcu vehicula, ut posuere augue porttitor.',
+      'Nullam volutpat, nulla a aliquam dictum, eros turpis hendrerit orci.',
+      'Quis lobortis nisl felis non dolor.',
+    ],
+    responsibilities: [
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      'Vestibulum tincidunt est vitae ultrices accumsan.',
+      'Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.',
+      'In laoreet, magna ut rutrum egestas, libero est fermentum eros.',
+      'Eget imperdiet nisl turpis sed quam.',
+    ],
     techStack: [
       '/images/docker.png',
       '/images/react.png',
@@ -69,7 +96,7 @@ const EmploymentHistory: React.FC = () => {
       </h2>
       <div className="flex justify-between items-center mb-8">
         <div className="font-bold">
-          <h3 className="text-2xl">{job.company}</h3>
+          <h3 className="text-2xl">{job.company} | {job.role}</h3>
           <p>{job.startDate} - {job.endDate}</p>
         </div>
         <div className="flex space-x-4">
@@ -94,11 +121,19 @@ const EmploymentHistory: React.FC = () => {
       <div className="flex flex-col md:flex-row justify-center items-start space-y-8 md:space-y-0 md:space-x-8">
         <div className="w-full md:w-1/2 space-y-4">
           <h4 className="text-xl font-bold text-left">Achievements</h4>
-          <p>{job.achievements}</p>
+          <ul className="list-disc list-inside">
+            {job.achievements.map((achievement, index) => (
+              <li key={index}>{achievement}</li>
+            ))}
+          </ul>
         </div>
         <div className="w-full md:w-1/2 space-y-4">
           <h4 className="text-xl font-bold text-left">Responsibilities</h4>
-          <p>{job.responsibilities}</p>
+          <ul className="list-disc list-inside">
+            {job.responsibilities.map((responsibility, index) => (
+              <li key={index}>{responsibility}</li>
+            ))}
+          </ul>
         </div>
       </div>
       <div className="w-full mt-8">
