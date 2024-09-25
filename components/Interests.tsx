@@ -9,29 +9,29 @@ const Interests: React.FC = () => {
       </h2>
       <div className="flex flex-col md:flex-row justify-center items-start space-y-8 md:space-y-0 md:space-x-8">
         <div className="w-full md:w-1/2 space-y-4">
-          <h3 className="text-2xl font-bold text-left">Interest 1</h3>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue. In laoreet, magna ut rutrum egestas, libero est fermentum eros, eget imperdiet nisl turpis sed quam. Nunc ac nisi id odio porttitor vestibulum eget a urna. Nunc nec dolor eros. Phasellus eget lacus nec mauris vehicula hendrerit.
+          <h3 className="text-2xl font-bold text-left">Sports and Leadership</h3>
+          <p className="text-sm">
+            I am a former athlete, having played American Football at national and international levels. My peak was taking part in trials with the Baltimore Ravens and captaining the London Warriors to multiple National Championships. I still have an interest in the NFL.
           </p>
           <div className="flex justify-center">
             <Image
-              src="/images/nextjs.png"
-              alt="Interest 1"
-              width={400}
+              src="/images/warriors.jpg"
+              alt="American Football"
+              width={600}
               height={300}
               className="w-full h-auto object-cover rounded-lg"
             />
           </div>
         </div>
         <div className="w-full md:w-1/2 space-y-4">
-          <h3 className="text-2xl font-bold text-left">Interest 2</h3>
-          <p>
-            Curabitur et turpis vitae neque finibus facilisis non sed erat. Maecenas et porta purus, ut gravida eros. Curabitur auctor est sit amet arcu vehicula, ut posuere augue porttitor. Nullam volutpat, nulla a aliquam dictum, eros turpis hendrerit orci, quis lobortis nisl felis non dolor. Nullam ultricies magna sem, quis tincidunt eros suscipit a. Morbi cursus ligula ut ligula vehicula, gravida maximus tortor venenatis.
+          <h3 className="text-2xl font-bold text-left">Corporate Engagement and AI</h3>
+          <p className="text-sm">
+            I judge the Corporate Engagement Awards; which has provided me with insight into how companies are engaging audiences and positioning themselves to customers. I have a deep interest in AI and have won awards for an academic mentoring project I developed during a London based Hackathon.
           </p>
           <div className="flex justify-center">
             <Image
-              src="/images/nextjs.png"
-              alt="Interest 2"
+              src="/images/cea.png"
+              alt="Corporate Engagement Awards"
               width={400}
               height={300}
               className="w-full h-auto object-cover rounded-lg"

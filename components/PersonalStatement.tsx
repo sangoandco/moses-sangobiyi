@@ -8,20 +8,20 @@ const PersonalStatement: React.FC = () => {
       </h2>
       <div className="flex flex-col md:flex-row justify-center items-start space-y-8 md:space-y-0 md:space-x-8">
         <div className="w-full md:w-1/2 space-y-4">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue. In laoreet, magna ut rutrum egestas, libero est fermentum eros, eget imperdiet nisl turpis sed quam. Nunc ac nisi id odio porttitor vestibulum eget a urna. Nunc nec dolor eros. Phasellus eget lacus nec mauris vehicula hendrerit.
-          </p>
-          <p>
-            Praesent laoreet, elit ut efficitur laoreet, dui nibh pellentesque magna, sed luctus libero lacus ac velit. Vestibulum in libero euismod, pharetra purus a, vestibulum lectus. Sed nec sem ex. Sed ornare rutrum bibendum. Cras ac arcu quam. Cras sodales nisi a pretium fermentum. Etiam tempus ornare diam nec placerat.
+          <h3 className="text-2xl font-bold text-left">Professional Overview</h3>
+          <p className='text-sm'>
+            A dynamic full-stack engineer with a strong skillset and systems development focus, well suited to ambitious brands. With a background spanning over a decade across startups, scale-ups, and agency roles in Health Care, Luxury Fashion, and Sport verticals, I specialize in gathering project requirements, articulating development plans that allow buffer for uncertainties, and delivering projects on time and on budget. This is achieved while fostering partnerships with stakeholders to accelerate business growth and improve customer experience.
           </p>
         </div>
         <div className="w-full md:w-1/2 space-y-4">
-          <p>
-            Curabitur et turpis vitae neque finibus facilisis non sed erat. Maecenas et porta purus, ut gravida eros. Curabitur auctor est sit amet arcu vehicula, ut posuere augue porttitor. Nullam volutpat, nulla a aliquam dictum, eros turpis hendrerit orci, quis lobortis nisl felis non dolor. Nullam ultricies magna sem, quis tincidunt eros suscipit a. Morbi cursus ligula ut ligula vehicula, gravida maximus tortor venenatis.
-          </p>
-          <p>
-            Etiam ultricies sem nec lectus feugiat, a vehicula risus aliquam. Morbi tincidunt, mi id finibus laoreet, lacus massa gravida lacus, a bibendum turpis elit ut nibh. Mauris pulvinar mi quis augue feugiat, non hendrerit nulla interdum. Sed vel magna vitae arcu tristique fermentum. Integer et sapien consequat, venenatis enim et, auctor dui. Aenean quis tincidunt odio, id pharetra nunc.
-          </p>
+          <h3 className="text-2xl font-bold text-left">Core Competencies</h3>
+          <ul className="list-disc list-inside text-sm">
+            <li>Excellent communicator with the ability to convey ideas clearly and succinctly</li>
+            <li>Agile, innovative, and strategic thinker</li>
+            <li>Proficient in IT, including Windows, Mac OS, Microsoft Office, Adobe Creative Cloud, and CRM platforms</li>
+            <li>Resilient and goal-oriented, continuously motivated to achieve personal and team objectives</li>
+            <li>Adept at establishing and maintaining meaningful relationships with stakeholders at all levels</li>
+          </ul>
         </div>
       </div>
     </div>
