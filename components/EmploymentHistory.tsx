@@ -41,8 +41,8 @@ const employmentData: Job[] = [
       '/images/shopify.png',
       '/images/nodejs.png',
       '/images/graphql.png',
-      '/images/mongodb.png',
-      '/images/git.png',
+      // '/images/mongodb.png',
+      // '/images/git.png',
       '/images/optimizely.png',
       '/images/digitalocean.png',
       '/images/hydrogen.png',
@@ -253,24 +253,27 @@ const EmploymentHistory: React.FC = () => {
         <div className="flex space-x-4">
           <button 
             onClick={handlePrevious} 
-            className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+            className="px-4 py-2 border-2 border-black text-black bg-transparent rounded hover:bg-black hover:text-white"
           >
             Previous
           </button>
           <button 
             onClick={handleNext} 
-            className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+            className="px-4 py-2 border-2 border-black text-black bg-transparent rounded hover:bg-black hover:text-white"
           >
             Next
           </button>
         </div>
       </div>
-      <div className="w-full mb-8 space-y-4">
-        <h4 className="text-xl font-bold text-left">Overview</h4>
-        <p className='text-sm'>{job.overview}</p>
-      </div>
+      {job.overview.trim().length > 0 && (
+        <div className="w-full mb-8 space-y-4">
+          <h4 className="text-xl font-bold text-left">Overview</h4>
+          <p className='text-sm'>{job.overview}</p>
+        </div>
+      )}
       <div className="flex flex-col md:flex-row justify-center items-start space-y-8 md:space-y-0 md:space-x-8">
-        <div className="w-full md:w-1/2 space-y-4">
+        {/* <div className="w-full md:w-1/2 space-y-4"> */}
+        <div className={`w-full ${job.responsibilities.length > 0 ? 'md:w-1/2' : ''} space-y-4`}>
           <h4 className="text-xl font-bold text-left">Achievements</h4>
           <ul className="list-disc list-inside text-sm">
             {job.achievements.map((achievement, index) => (
@@ -278,30 +281,37 @@ const EmploymentHistory: React.FC = () => {
             ))}
           </ul>
         </div>
-        <div className="w-full md:w-1/2 space-y-4">
-          <h4 className="text-xl font-bold text-left">Responsibilities</h4>
-          <ul className="list-disc list-inside text-sm">
-            {job.responsibilities.map((responsibility, index) => (
-              <li key={index}>{responsibility}</li>
-            ))}
-          </ul>
-        </div>
+        {job.responsibilities.length > 0 && (
+          <div className="w-full md:w-1/2 space-y-4">
+            <h4 className="text-xl font-bold text-left">Responsibilities</h4>
+            <ul className="list-disc list-inside text-sm">
+              {job.responsibilities.map((responsibility, index) => (
+                <li key={index}>{responsibility}</li>
+              ))}
+            </ul>
+          </div>
+        )}
       </div>
       <div className="w-full mt-8">
+      {job.techStack.length > 0 && (
+        <>
         <h4 className="text-xl font-bold text-left mb-4">Tech Stack</h4>
-        <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-4">
-          {job.techStack.map((logo, index) => (
-            <div key={index} className="flex justify-center items-center p-2 bg-white rounded">
-              <Image
-                src={logo}
-                alt={`Technology ${index + 1}`}
-                width={90}
-                height={90}
-                objectFit="contain"
-              />
-            </div>
-          ))}
-        </div>
+
+          <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-4">
+            {job.techStack.map((logo, index) => (
+              <div key={index} className="flex justify-center items-center p-2 bg-white rounded">
+                <Image
+                  src={logo}
+                  alt={`Technology ${index + 1}`}
+                  width={90}
+                  height={90}
+                  objectFit="contain"
+                />
+              </div>
+            ))}
+          </div>
+          </>
+        )}
       </div>
     </div>
   );

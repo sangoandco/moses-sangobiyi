@@ -24,7 +24,7 @@ const Interests: React.FC = () => {
           </div>
         </div>
         <div className="w-full md:w-1/2 space-y-4">
-          <h3 className="text-2xl font-bold text-left">Corporate Engagement and AI</h3>
+          <h3 className="text-2xl font-bold text-left">Corporate Engagement & AI</h3>
           <p className="text-sm">
             I judge the Corporate Engagement Awards; which has provided me with insight into how companies are engaging audiences and positioning themselves to customers. I have a deep interest in AI and have won awards for an academic mentoring project I developed during a London based Hackathon.
           </p>
