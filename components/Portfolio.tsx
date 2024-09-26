@@ -13,7 +13,7 @@ const slides: SlideProps[] = [
   {
     title: 'Crabrtee & Evelyn',
     image: '/images/crabtreeevelyn.png',
-    url: 'https://www.crabtree-evelyn.co.uk/',
+    url: 'https://www.crabtree-evelyn.com.my/',
   },
   {
     title: 'Disappearing Dining Club',
@@ -33,7 +33,7 @@ const slides: SlideProps[] = [
   {
     title: 'Sirkka Networks',
     image: '/images/sirkkanetworks.png',
-    url: 'https://www.sirkkanetworks.com/',
+    url: 'https://www.sirkkahealth.com/',
   },
   {
     title: 'Veevers Carter',
@@ -63,9 +63,9 @@ const Portfolio: React.FC = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prevSlide) => (prevSlide + 1) % slides.length);
-    }, 3000); // Change slide every 3 seconds
+    }, 3000);
 
-    return () => clearInterval(interval); // Cleanup interval on component unmount
+    return () => clearInterval(interval);
   }, []);
 
   return (
