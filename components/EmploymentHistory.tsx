@@ -245,20 +245,20 @@ const EmploymentHistory: React.FC = () => {
       <h2 className="text-3xl font-bold mb-8 text-left">
         Employment History
       </h2>
-      <div className="flex justify-between items-center mb-8">
-        <div className="font-bold">
+      <div className="flex flex-col md:flex-row justify-between items-center mb-8">
+        <div className="font-bold mb-4 md:mb-0">
           <h3 className="text-2xl">{job.company} | {job.role}</h3>
           <p>{job.startDate} - {job.endDate}</p>
         </div>
-        <div className="flex space-x-4">
-          <button 
-            onClick={handlePrevious} 
+        <div className="flex md:flex-row flex-col space-y-2 md:space-y-0 md:space-x-4 w-full md:w-auto">
+          <button
+            onClick={handlePrevious}
             className="px-4 py-2 border-2 border-black text-black bg-transparent rounded hover:bg-black hover:text-white"
           >
             Previous
           </button>
-          <button 
-            onClick={handleNext} 
+          <button
+            onClick={handleNext}
             className="px-4 py-2 border-2 border-black text-black bg-transparent rounded hover:bg-black hover:text-white"
           >
             Next
