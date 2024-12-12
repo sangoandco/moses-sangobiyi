@@ -16,6 +16,28 @@ interface Job {
 
 const employmentData: Job[] = [
   {
+    company: 'Confidential Client',
+    role: 'Shopify Technical Lead,',
+    startDate: '12/2024',
+    endDate: 'present',
+    overview: `A global coffee brand in the process of launching a dedicated direct-to-consumer website, with plans to enhance their customer experience. I was approached to lead the Shopify implementation, aiming to support their entry into direct online sales. Faced with a three-month deadline for a beta launch, I provided expert guidance on feasible Shopify solutions, considering options like Liquid storefronts and headless architectures. My role was crucial in advising the team on leveraging their existing membership program's APIs and executing a phased rollout accessible to a select group of consumers, all while maintaining their global brand identity. Through a series of collaborative meetings & workshops, I distilled their needs into a comprehensive client proposal that received positive feedback and set the foundation for project success.`,
+    achievements: [
+      `Consulted on Shopify capabilities, ensuring alignment with the brand's technical constraints and ambitions.`,
+      `Guided the team on leveraging APIs for enhanced functionality within set timelines.`,
+      `Designed a strategy for a phased website launch, maintaining exclusivity and brand consistency.`,
+      `Facilitated clear communication and alignment between the development team and stakeholders.`,
+    ],
+    responsibilities: [],
+    techStack: [
+      '/images/shopify.png',
+      '/images/nodejs.png',
+      '/images/graphql.png',
+      '/images/remix.png',
+      '/images/contentful.png',
+      '/images/hydrogen.png',
+    ]
+  },
+  {
     company: 'Lucy & Yak',
     role: 'Senior Full Stack Engineer',
     startDate: '05/2023',
@@ -41,8 +63,6 @@ const employmentData: Job[] = [
       '/images/shopify.png',
       '/images/nodejs.png',
       '/images/graphql.png',
-      // '/images/mongodb.png',
-      // '/images/git.png',
       '/images/optimizely.png',
       '/images/digitalocean.png',
       '/images/hydrogen.png',
@@ -272,7 +292,6 @@ const EmploymentHistory: React.FC = () => {
         </div>
       )}
       <div className="flex flex-col md:flex-row justify-center items-start space-y-8 md:space-y-0 md:space-x-8">
-        {/* <div className="w-full md:w-1/2 space-y-4"> */}
         <div className={`w-full ${job.responsibilities.length > 0 ? 'md:w-1/2' : ''} space-y-4`}>
           <h4 className="text-xl font-bold text-left">Achievements</h4>
           <ul className="list-disc list-inside text-sm">

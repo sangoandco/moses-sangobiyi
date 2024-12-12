@@ -16,7 +16,8 @@ const softwareLogos = [
   { name: 'graphql', src: '/images/graphql.png' },
   { name: 'sourcetree', src: '/images/sourcetree.png' },
   { name: 'shopify', src: '/images/shopify.png' },
-  { name: 'nextjs', src: '/images/nextjs.png' },
+  { name: 'contentful', src: '/images/contentful.png' },
+  { name: 'remix', src: '/images/remix.png' },
   { name: 'azure', src: '/images/azure.png' },
   { name: 'html', src: '/images/html.png' },
   { name: 'css', src: '/images/css.png' },
@@ -25,7 +26,7 @@ const softwareLogos = [
   { name: 'angular', src: '/images/angular.png' },
   { name: 'aws', src: '/images/aws.png' },
   { name: 'react', src: '/images/react.png' },
-  { name: 'git', src: '/images/git.png' },
+  { name: 'nextjs', src: '/images/nextjs.png' },
 ];
 
 const Software: React.FC = () => {
