@@ -16,10 +16,10 @@ export default function Home() {
         phoneNumber="+44 7951 214 155"
         github="https://www.github.com/sangoandco"
       />
+      <Software />
       <PersonalStatement />
       <EmploymentHistory />
       <Portfolio />
-      <Software />
       <EducationHistory />
       <Interests />
     </main>

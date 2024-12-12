@@ -1,5 +1,7 @@
+"use client"
 import React from 'react';
-import Image from 'next/image';
+import ScrollingBannerLeft from './ScrollingBannerLeft';
+import ScrollingBannerRight from './ScrollingBannerRight';
 
 const softwareLogos = [
   { name: 'bootstrap', src: '/images/bootstrap.png' },
@@ -17,6 +19,9 @@ const softwareLogos = [
   { name: 'sourcetree', src: '/images/sourcetree.png' },
   { name: 'shopify', src: '/images/shopify.png' },
   { name: 'contentful', src: '/images/contentful.png' },
+];
+
+const softwareLogosBlock = [
   { name: 'remix', src: '/images/remix.png' },
   { name: 'azure', src: '/images/azure.png' },
   { name: 'html', src: '/images/html.png' },
@@ -32,12 +37,16 @@ const softwareLogos = [
 const Software: React.FC = () => {
   return (
     <div className="px-4 py-8 max-w-7xl mx-auto">
-      <h2 className="text-3xl font-bold mb-8 text-left">
+
+      <ScrollingBannerLeft logos={softwareLogos} />
+      <ScrollingBannerRight logos={softwareLogosBlock} />
+
+      {/* <h2 className="text-3xl font-bold mb-8 text-left">
         Software Skills
-      </h2>
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+      </h2> */}
+      {/* <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
         {softwareLogos.map((logo) => (
-          <div key={logo.name} className="flex justify-center items-center p-4 bg-white ">
+          <div key={logo.name} className="flex justify-center items-center p-4 bg-white content-center">
             <Image
               src={logo.src}
               alt={logo.name}
@@ -47,7 +56,7 @@ const Software: React.FC = () => {
             />
           </div>
         ))}
-      </div>
+      </div> */}
     </div>
   );
 };
